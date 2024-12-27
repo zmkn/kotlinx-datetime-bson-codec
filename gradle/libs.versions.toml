@@ -13,4 +13,4 @@ shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }
 [libraries]
 kotlinx-datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version.ref = "kotlinxDatetime" }
 
-mongodb-bson-kotlinx = { group = "org.mongodb", name = "bson-kotlinx", version.ref = "mongodb" }
+mongodb-bson = { group = "org.mongodb", name = "bson", version.ref = "mongodb" }

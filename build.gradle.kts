@@ -60,6 +60,6 @@ tasks.test {
 
 dependencies {
     api(libs.kotlinx.datetime) // Kotlin 日期类型库
-    api(libs.mongodb.bson.kotlinx) // Mongodb Bson 序列化库
+    api(libs.mongodb.bson) // Mongodb Bson 序列化库
     testImplementation(kotlin("test")) // Kotlin 测试依赖
 }
