@@ -1,4 +1,4 @@
-package com.zmkn.bson.codecs
+package com.zmkn.bson.codec.datetime.codecs
 
 import kotlinx.datetime.Instant
 import org.bson.BsonReader
