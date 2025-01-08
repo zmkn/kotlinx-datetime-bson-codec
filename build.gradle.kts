@@ -328,7 +328,7 @@ jreleaser {
                 }
             }
             mavenCentral {
-                create("sonatype") {
+                create("central") {
                     // Enables or disables the deployer.
                     // Supported values are [`NEVER`, `ALWAYS`, `RELEASE`, `SNAPSHOT`].
                     // Defaults to `NEVER`.
