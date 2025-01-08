@@ -427,7 +427,7 @@ if (!buildJreleaserDir.exists()) {
 }
 
 // 声明当前时间
-val currentDateTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"))
+val currentDateTime: String = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"))
 
 tasks.withType<Jar> {
     archiveBaseName.set(project.name)
