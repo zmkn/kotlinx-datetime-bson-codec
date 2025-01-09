@@ -117,6 +117,19 @@ jreleaser {
         // The project's inception year.
         inceptionYear.set("2025")
 
+        snapshot {
+            // A regex to determine if the project version is snapshot
+            pattern.set(".*-SNAPSHOT")
+
+            // The value of the snapshot tag.
+            // If undefined, will use `early-access`.
+            label.set("${rootProject.version}")
+
+            // Generate full changelog since last non-snapshot release.
+            // Default is `false`.
+            fullChangelog.set(false)
+        }
+
         links {
             homepage.set("https://github.com/zmkn/kotlinx-datetime-bson-codec")
             documentation.set("https://github.com/zmkn/kotlinx-datetime-bson-codec/wiki")
