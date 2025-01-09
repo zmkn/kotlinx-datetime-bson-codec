@@ -36,7 +36,7 @@ kotlin {
     }
 }
 
-configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
+ktlint {
     filter {
         exclude {
             // 排除所有以 .gradle.kts 结尾的文件和 build/generated 目录下的所有文件
@@ -52,8 +52,8 @@ publishing {
             artifactId = project.name
             from(components["java"])
             pom {
-                name.set("Kotlinx datetime bson codec")
-                description.set("kotlinx datetime codec for bson")
+                name.set("Kotlinx Datetime Bson Codec")
+                description.set("Kotlinx datetime codec for Bson")
                 url.set("https://github.com/zmkn/kotlinx-datetime-bson-codec")
                 inceptionYear.set("2025")
                 licenses {
@@ -86,11 +86,11 @@ publishing {
 
 jreleaser {
     project {
-        name.set("kotlinx-datetime-bson-codec")
+        name.set("Kotlinx Datetime Bson Codec")
 
         // A short description (60 chars max).
         //  Only if configured distributions or announcers.
-        description.set("kotlinx datetime codec for bson")
+        description.set("Kotlinx datetime codec for Bson")
 
         // A list of author names.
         //  Only if configured distributions or announcers.
