@@ -97,7 +97,7 @@ jreleaser {
         authors.addAll(listOf("HZ"))
 
         // A list of tags.
-        tags.addAll(listOf("cli", "awesome"))
+        tags.addAll(listOf("datetime", "bson"))
 
         // List of maintainers.
         // Values are typically GitHub/GitLab usernames.
