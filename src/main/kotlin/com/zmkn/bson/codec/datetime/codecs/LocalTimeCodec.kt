@@ -12,11 +12,7 @@ class LocalTimeCodec : Codec<LocalTime> {
         writer.writeString(value.toString())
     }
 
-    override fun getEncoderClass(): Class<LocalTime> {
-        return LocalTime::class.java
-    }
+    override fun getEncoderClass(): Class<LocalTime> = LocalTime::class.java
 
-    override fun decode(reader: BsonReader, decoderContext: DecoderContext): LocalTime {
-        return LocalTime.parse(reader.readString())
-    }
+    override fun decode(reader: BsonReader, decoderContext: DecoderContext): LocalTime = LocalTime.parse(reader.readString())
 }

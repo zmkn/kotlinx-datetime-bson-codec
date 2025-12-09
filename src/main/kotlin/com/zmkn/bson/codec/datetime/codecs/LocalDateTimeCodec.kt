@@ -12,11 +12,7 @@ class LocalDateTimeCodec : Codec<LocalDateTime> {
         writer.writeString(value.toString())
     }
 
-    override fun getEncoderClass(): Class<LocalDateTime> {
-        return LocalDateTime::class.java
-    }
+    override fun getEncoderClass(): Class<LocalDateTime> = LocalDateTime::class.java
 
-    override fun decode(reader: BsonReader, decoderContext: DecoderContext): LocalDateTime {
-        return LocalDateTime.parse(reader.readString())
-    }
+    override fun decode(reader: BsonReader, decoderContext: DecoderContext): LocalDateTime = LocalDateTime.parse(reader.readString())
 }

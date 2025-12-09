@@ -13,16 +13,10 @@ class FixedOffsetTimeZoneCodec : Codec<FixedOffsetTimeZone> {
         writer.writeString(value.id)
     }
 
-    override fun getEncoderClass(): Class<FixedOffsetTimeZone> {
-        return FixedOffsetTimeZone::class.java
-    }
+    override fun getEncoderClass(): Class<FixedOffsetTimeZone> = FixedOffsetTimeZone::class.java
 
     override fun decode(reader: BsonReader, decoderContext: DecoderContext): FixedOffsetTimeZone {
         val zone = TimeZone.of(reader.readString())
-        return if (zone is FixedOffsetTimeZone) {
-            zone
-        } else {
-            throw IllegalArgumentException("Timezone identifier '$zone' does not correspond to a fixed-offset timezone")
-        }
+        return zone as? FixedOffsetTimeZone ?: throw IllegalArgumentException("Timezone identifier '$zone' does not correspond to a fixed-offset timezone")
     }
 }

@@ -14,9 +14,7 @@ class DayBasedDateTimeUnitCodec : Codec<DateTimeUnit.DayBased> {
         writer.writeEndDocument()
     }
 
-    override fun getEncoderClass(): Class<DateTimeUnit.DayBased> {
-        return DateTimeUnit.DayBased::class.java
-    }
+    override fun getEncoderClass(): Class<DateTimeUnit.DayBased> = DateTimeUnit.DayBased::class.java
 
     override fun decode(reader: BsonReader, decoderContext: DecoderContext): DateTimeUnit.DayBased {
         reader.readStartDocument()

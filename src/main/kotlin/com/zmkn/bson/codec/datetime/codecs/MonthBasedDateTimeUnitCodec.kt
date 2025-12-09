@@ -14,9 +14,7 @@ class MonthBasedDateTimeUnitCodec : Codec<DateTimeUnit.MonthBased> {
         writer.writeEndDocument()
     }
 
-    override fun getEncoderClass(): Class<DateTimeUnit.MonthBased> {
-        return DateTimeUnit.MonthBased::class.java
-    }
+    override fun getEncoderClass(): Class<DateTimeUnit.MonthBased> = DateTimeUnit.MonthBased::class.java
 
     override fun decode(reader: BsonReader, decoderContext: DecoderContext): DateTimeUnit.MonthBased {
         reader.readStartDocument()

@@ -12,11 +12,7 @@ class InstantCodec : Codec<Instant> {
         writer.writeString(value.toString())
     }
 
-    override fun getEncoderClass(): Class<Instant> {
-        return Instant::class.java
-    }
+    override fun getEncoderClass(): Class<Instant> = Instant::class.java
 
-    override fun decode(reader: BsonReader, decoderContext: DecoderContext): Instant {
-        return Instant.parse(reader.readString())
-    }
+    override fun decode(reader: BsonReader, decoderContext: DecoderContext): Instant = Instant.parse(reader.readString())
 }

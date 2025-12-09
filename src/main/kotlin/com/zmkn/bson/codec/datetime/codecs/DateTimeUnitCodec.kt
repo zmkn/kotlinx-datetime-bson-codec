@@ -19,9 +19,7 @@ class DateTimeUnitCodec : Codec<DateTimeUnit> {
         writer.writeEndDocument()
     }
 
-    override fun getEncoderClass(): Class<DateTimeUnit> {
-        return DateTimeUnit::class.java
-    }
+    override fun getEncoderClass(): Class<DateTimeUnit> = DateTimeUnit::class.java
 
     override fun decode(reader: BsonReader, decoderContext: DecoderContext): DateTimeUnit {
         reader.readStartDocument()

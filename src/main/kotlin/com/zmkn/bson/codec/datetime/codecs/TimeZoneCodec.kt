@@ -12,11 +12,7 @@ class TimeZoneCodec : Codec<TimeZone> {
         writer.writeString(value.id)
     }
 
-    override fun getEncoderClass(): Class<TimeZone> {
-        return TimeZone::class.java
-    }
+    override fun getEncoderClass(): Class<TimeZone> = TimeZone::class.java
 
-    override fun decode(reader: BsonReader, decoderContext: DecoderContext): TimeZone {
-        return TimeZone.of(reader.readString())
-    }
+    override fun decode(reader: BsonReader, decoderContext: DecoderContext): TimeZone = TimeZone.of(reader.readString())
 }

@@ -13,14 +13,10 @@ class DatePeriodCodec : Codec<DatePeriod> {
         writer.writeString(value.toString())
     }
 
-    override fun getEncoderClass(): Class<DatePeriod> {
-        return DatePeriod::class.java
-    }
+    override fun getEncoderClass(): Class<DatePeriod> = DatePeriod::class.java
 
-    override fun decode(reader: BsonReader, decoderContext: DecoderContext): DatePeriod {
-        return when (val period = DateTimePeriod.parse(reader.readString())) {
-            is DatePeriod -> period
-            else -> throw IllegalArgumentException("$period is not a date-based period")
-        }
+    override fun decode(reader: BsonReader, decoderContext: DecoderContext): DatePeriod = when (val period = DateTimePeriod.parse(reader.readString())) {
+        is DatePeriod -> period
+        else -> throw IllegalArgumentException("$period is not a date-based period")
     }
 }

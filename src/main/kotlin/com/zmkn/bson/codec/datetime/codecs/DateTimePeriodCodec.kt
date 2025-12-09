@@ -12,11 +12,7 @@ class DateTimePeriodCodec : Codec<DateTimePeriod> {
         writer.writeString(value.toString())
     }
 
-    override fun getEncoderClass(): Class<DateTimePeriod> {
-        return DateTimePeriod::class.java
-    }
+    override fun getEncoderClass(): Class<DateTimePeriod> = DateTimePeriod::class.java
 
-    override fun decode(reader: BsonReader, decoderContext: DecoderContext): DateTimePeriod {
-        return DateTimePeriod.parse(reader.readString())
-    }
+    override fun decode(reader: BsonReader, decoderContext: DecoderContext): DateTimePeriod = DateTimePeriod.parse(reader.readString())
 }

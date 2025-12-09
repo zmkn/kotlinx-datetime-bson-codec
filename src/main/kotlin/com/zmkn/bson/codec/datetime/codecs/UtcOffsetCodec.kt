@@ -12,11 +12,7 @@ class UtcOffsetCodec : Codec<UtcOffset> {
         writer.writeString(value.toString())
     }
 
-    override fun getEncoderClass(): Class<UtcOffset> {
-        return UtcOffset::class.java
-    }
+    override fun getEncoderClass(): Class<UtcOffset> = UtcOffset::class.java
 
-    override fun decode(reader: BsonReader, decoderContext: DecoderContext): UtcOffset {
-        return UtcOffset.parse(reader.readString())
-    }
+    override fun decode(reader: BsonReader, decoderContext: DecoderContext): UtcOffset = UtcOffset.parse(reader.readString())
 }
